@@ -1,6 +1,6 @@
 # Компоненты проекта
 
-1. **client_connector.cpp** - Основная программа для подключения к WiFi.
+1. **connector.cpp** - Основная программа для подключения к WiFi.
 
 2. **wificon.cpp** - Дублирующая программа с аналогичным функционалом для подключения к WiFi. Можете использовать любой из двух файлов для компиляции и выполнения.
 
@@ -18,10 +18,10 @@ SSID_вашей_сети
 
 # Компиляция и выполнение
 
-1. Скомпилируйте `client_connector` или `wificon`:
+1. Скомпилируйте `connector` или `wificon`:
 
    ```bash
-   g++ -o client_connector client_connector.cpp
+   g++ -o connector connector.cpp
    g++ -o wificon wificon.cpp
    ```
 
