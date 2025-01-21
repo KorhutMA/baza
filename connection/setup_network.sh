@@ -12,9 +12,5 @@ echo -e "[main]\nplugins=\n\n[ifupdown]\nmanaged=true\n" > /etc/NetworkManager/N
 echo "Перезапускаем NetworkManager..."
 systemctl restart NetworkManager
 
-echo "Запускаем wificon..."
-cd /home/orangepi/serverclient
-./wificon
-
 echo "Перезагружаем систему..."
 reboot
