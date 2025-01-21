@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib> // Для использования system()
 
 class WiFiConfig {
 private:
@@ -63,6 +64,14 @@ int main() {
     if (config.readNetworkCredentials()) {
         std::cout << "Прочитанная SSID: " << config.getSSID() << std::endl;
         std::cout << "Прочитанный пароль: " << config.getPassword() << std::endl;
+    }
+
+    std::string command = "scp /home/korhutma/Documents/network_credentials.txt orangepi@192.168.1.1:/home/orangepi/serverclient";
+    int result = system(command.c_str());
+    if (result == 0) {
+        std::cout << "Файл успешно скопирован на удалённый сервер." << std::endl;
+    } else {
+        std::cerr << "Ошибка при копировании файла на удалённый сервер." << std::endl;
     }
 
     return 0;
