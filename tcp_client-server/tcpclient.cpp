@@ -38,14 +38,14 @@ public:
 };
 
 int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        printf("Usage: %s <Server_IP>\n", argv[0]);
+    if (argc != 3) {
+        printf("Usage: %s <Server_IP> <Command>\n", argv[0]);
         return -1;
     }
 
     const char* serverIP = argv[1];
+    const char* command = argv[2];
     int port = 8080;
-    const char* command = "128";
 
     ClientSocket clientSocket;
 
